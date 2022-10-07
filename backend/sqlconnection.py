@@ -1,5 +1,6 @@
 import mysql.connector
 from mysql.connector import Error
+#this function connects to sql databse and throws and error if it does not work
 def mysql_connector():
     try:
         connection = mysql.connector.connect(host='127.0.0.1',
