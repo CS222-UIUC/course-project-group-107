@@ -1,6 +1,6 @@
 import React from 'react';
   
-const About = () => {
+function About(){
   return (
     <div
       style={{
@@ -11,7 +11,7 @@ const About = () => {
       }}
     >
       <h1>About Page</h1>
-    </div>
+    </div> 
   );
 };
   

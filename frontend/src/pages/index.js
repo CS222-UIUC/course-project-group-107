@@ -1,6 +1,6 @@
 import React from "react";
 import './index.css';
-const Home = () => {
+function Home(){
     return (
         <div className='App-header'>
           Welcome to our web app for information on ARC capacities
