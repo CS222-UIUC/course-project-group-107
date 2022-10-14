@@ -2,9 +2,29 @@ import io
 import sys
 import datapull
 import sqlconnection
+import pandas as pd
+import mysql.connector
+from mysql.connector import Error
+
 def test_print():
     s = datapull.getdata()
     assert s == ['netid', 'date', 'arccap']
 def test_sql_conn():
     s = sqlconnection.mysql_connector()
     assert s == "MySQL connection is closed"
+
+def test_data_insert():
+    s = sqlconnection.csv_to_db()
+    #testing to see if the table is created and data is inserted
+    #use cursor and connection to select first row
+    sql_stmt = "SELECT * FROM data.arcdatacsv LIMIT 1"
+    connection = mysql.connector.connect(host='127.0.0.1',
+                                        user='root',
+                                        password='cs222', database = 'data', connection_timeout=180)
+    #uses connection and cursor to interact with the database
+    cursor = connection.cursor()
+
+    cursor.execute(sql_stmt)
+    firstrow = cursor.fetchall() #executes query and fetches the data 
+    print(firstrow)
+    assert firstrow == [('ktrikha2', '2022-03-22', 575)]  #asserts data has been created and pulled into the db 
