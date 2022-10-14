@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import illinilogo2crop from "./assets/illinilogo2crop.png";
 import "./App.css";
 
 class App extends Component {
@@ -26,13 +27,13 @@ class App extends Component {
 
   handleClick = e => {
     e.preventDefault();
-
     alert("Goes to registration page");
   };
 
   render() {
     return (
       <div className="App">
+        <img src={illinilogo2crop} className="illinilogo2crop" alt="Illinois" />
         <form className="form" onSubmit={this.handleSubmit}>
           <div className="input-group">
             <label htmlFor="email">Email</label>
@@ -40,12 +41,12 @@ class App extends Component {
           </div>
           <div className="input-group">
             <label htmlFor="password">Password</label>
-            <input type="password" name="password" />
+            <input type="password" name="password" placeholder="*********" />
           </div>
           <button className="primary">LOGIN</button>
         </form>
         <button className="secondary" onClick={this.handleClick}>
-          Create a new account
+          CREATE A NEW ACCOUNT
         </button>
       </div>
     );

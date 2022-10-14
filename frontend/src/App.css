@@ -6,7 +6,7 @@
 }
 
 html {
-  background: #b5c0ad;
+  background: #13294B;
   min-height: 720px;
   min-width: 320px;
 }
@@ -24,7 +24,7 @@ body {
 }
 
 .App {
-  background: #fff;
+  background: #f7f7f7;
   border-radius: 4px;
   box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
   max-width: 615px;
@@ -37,7 +37,7 @@ body {
   max-width: 90%;
 }
 .App > .form {
-  margin-bottom: 98px;
+  margin-bottom: 30px;
   margin-top: 41px;
 }
 
@@ -96,14 +96,14 @@ button {
   width: 80%;
 }
 button.primary {
-  background: #f58733;
+  background: #FF5F05;
 }
 button.primary:hover {
-  background: #ea6c0b;
+  background: #ca4d05;
 }
 button.secondary {
-  background: #c1d7aa;
+  background: #FF5F05;
 }
 button.secondary:hover {
-  background: #a8c787;
+  background: #ca4d05;
 }
