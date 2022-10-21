@@ -4,6 +4,8 @@ import datapull
 import sqlconnection
 import pandas as pd
 import mysql.connector
+import logincheck
+
 from mysql.connector import Error
 
 def test_print():
@@ -28,3 +30,8 @@ def test_data_insert():
     firstrow = cursor.fetchall() #executes query and fetches the data 
     print(firstrow)
     assert firstrow == [('ktrikha2', '2022-03-22', 575)]  #asserts data has been created and pulled into the db 
+    
+def test_password_check():
+    s = logincheck.isvalidpass('ktrikha2','hi')
+    print(s)
+    assert s == "Proceed"
