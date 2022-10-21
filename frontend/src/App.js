@@ -17,10 +17,8 @@ function App() {
           <Route path='/Live' component={Live} />
         </Routes>
       </Router>
-      <img src={logo} className=".App-Header" alt="logo"></img>
-      <div className='App-header'>
-        200/1000 people inside
-      </div>
+      <img src={logo} className=".App-Logo" alt="logo"></img>
+     
       
     </div>
     
