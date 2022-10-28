@@ -22,4 +22,19 @@ def isvalidpass(netid, password):
         return "Invalid Password"
     else:  #means that everything is ok
         return "Proceed"
-    
+
+def newuser(netid, password):
+    connection = mysql.connector.connect(host='127.0.0.1',
+                                        user='root',
+                                        password='cs222', database = 'data', connection_timeout=180)
+    #uses connection and cursor to interact with the database
+    cursor = connection.cursor()
+    find_user_stmt = "SELECT * FROM login WHERE NetID = '{}'".format(netid)
+    cursor.execute(find_user_stmt)
+    cursor.fetchall()
+    if(cursor.rowcount != 0):
+        return "Username Already Exists"
+    insert_stmt = "INSERT INTO login (NetID, Password) VALUES ('{}', '{}')".format(netid, password)
+    cursor.execute(insert_stmt)
+    connection.commit()
+    return "Successful New User"

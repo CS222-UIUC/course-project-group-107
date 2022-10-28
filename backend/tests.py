@@ -30,8 +30,13 @@ def test_data_insert():
     firstrow = cursor.fetchall() #executes query and fetches the data 
     print(firstrow)
     assert firstrow == [('ktrikha2', '2022-03-22', 575)]  #asserts data has been created and pulled into the db 
-    
+
+def test_new_user(): #this test case will only work once, need to change parameters
+    s = logincheck.newuser('testuser','testpass')  #tested for both user name existing and for 
+    assert s == "Successful New User"    
+
 def test_password_check():
     s = logincheck.isvalidpass('ktrikha2','hi')
     print(s)
     assert s == "Proceed"
+
