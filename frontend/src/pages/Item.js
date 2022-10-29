@@ -1,26 +1,18 @@
-import React, { Component } from "react";
+import React from 'react';
+import '../Item.css';
 
-class Item extends Component {
-  state = {
-    listitems: ["Gym 1", "Gym 2", "Gym 3", "Racquetball/Squash Courts", "Indoor Pool", "Outdoor Pool", "S & C (Main)", "S & C (Upstairs)", "S & C (Downstairs)", "Track"]
-  };
+const data = new Array(10).fill().map((value, index) => ({ id: index, title: "Area", body: "Capacity" }))
 
-  render() {
-    return (
-      <React.Fragment>
-        <ul className="list-group">
-          {this.state.listitems.map(listitem => (
-            <li
-              key={listitem}
-              className="list-group-item list-group-item-primary"
-            >
-              {listitem}
-            </li>
-          ))}
-        </ul>
-      </React.Fragment>
-    );
-  }
+function Item() {
+  return (
+    <div>
+      {data.map(((item) => (
+        <div key={item.id} className="post">
+          <h3>{item.title}</h3>
+          <p>{item.body}</p>
+        </div>
+      )))}
+    </div>
+  );
 }
-
 export default Item;

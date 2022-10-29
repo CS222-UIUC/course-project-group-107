@@ -1,12 +1,14 @@
 import React, { Component } from "react";
-import "./App.css";
-import Login from "./pages/Login";
+// import "./Login.css";
+import "./Item.css";
+// import Login from "./pages/Login";
+import Item from "./pages/Item";
 
 class App extends Component {
 
   render() {
     return (
-      <Login />
+      <Item />
     );
   }
 }

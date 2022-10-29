@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import "../App.css";
+import "../Login.css";
 import illinilogo2crop from "../assets/illinilogo2crop.png";
 
 class Login extends Component {
