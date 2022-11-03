@@ -33,8 +33,9 @@ def newuser(netid, password):
     cursor.execute(find_user_stmt)
     cursor.fetchall()
     if(cursor.rowcount != 0):
-        return "Username Already Exists"
+        return False
     insert_stmt = "INSERT INTO login (NetID, Password) VALUES ('{}', '{}')".format(netid, password)
     cursor.execute(insert_stmt)
     connection.commit()
-    return "Successful New User"
+    return True
+
