@@ -61,4 +61,4 @@ def csv_to_db():
         , '{}')'''.format(row.netid, row.date, row.arccap)
         cursor.execute(toinsert)     #executes sql statement
     connection.commit()
-csv_to_db()
+#csv_to_db()
