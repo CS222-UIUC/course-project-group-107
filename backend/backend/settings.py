@@ -30,14 +30,21 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+
+LOGIN_REDIRECT_URL =  '/'
+
 INSTALLED_APPS = [
+    'App.apps.AppConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
+    'accounts'
 ]
+CRISPY_TEMPLATE_PACK =  'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -75,8 +82,13 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'data',
+        
+        'USER': 'root',
+        'HOST': '127.0.0.1',
+        'PASSWORD': 'cs222'
+
     }
 }
 
@@ -105,7 +117,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'CDT'
 
 USE_I18N = True
 
