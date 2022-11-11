@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
 
+
+import Navbar from './components/Navbar';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/index';
+import About from './pages/about';
+import Live from './pages/Live'
+import Login from './pages/login';
+import Insight from './pages/Insights';
+// import logo from './illini_3_15.png';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+      <Router>
+      <Navbar/> 
+        <Routes>
+          <Route path='/Home' component={Home} />
+          <Route path='/about' component={About} />
+          <Route path='/Live' component={Live} />
+          <Route path='/login' component={Login} />
+          <Route path='/insight' component={Insight}/>
+        </Routes>
+      </Router> 
+);
 }
-
 export default App;
