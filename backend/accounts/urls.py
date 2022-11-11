@@ -14,6 +14,7 @@ urlpatterns = [
     path('reset/done/', views.PasswordResetCompleteView.as_view(), name='password_reset_complete'),
 
 ]
+#commit for latest changes 
 
 
 
