@@ -10,7 +10,7 @@ from django.shortcuts import HttpResponseRedirect
 
 def login(request):
     
-    return render(request, '../frontend/src/pages/login.js')
+    return render(request, 'login.html')
 
 # def logout(request):
     
