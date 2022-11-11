@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import "../App.css";
-import illinilogo2crop from "../assets/illinilogo2crop.png";
+import illinilogo2crop from "./illinilogo2crop.png";
 
 class Login extends Component {
     handleSubmit = e => {
