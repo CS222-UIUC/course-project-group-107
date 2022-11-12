@@ -30,14 +30,23 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+
+LOGIN_REDIRECT_URL =  '/'
+
 INSTALLED_APPS = [
+    'App.apps.AppConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
+    'accounts',
+    'rest_framework',
+    'corsheaders'
 ]
+CRISPY_TEMPLATE_PACK =  'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -47,6 +56,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware'
 ]
 
 ROOT_URLCONF = 'backend.urls'
@@ -81,6 +91,8 @@ DATABASES = {
         'HOST': '127.0.0.1',
         'PASSWORD': 'cs222'
         #'TIMEOUT': '180'
+        
+
     }
 }
 
@@ -109,7 +121,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'CDT'
 
 USE_I18N = True
 
@@ -125,3 +137,7 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CORS_ORIGIN_WHITELIST = [
+     'http://localhost:3000'
+]
