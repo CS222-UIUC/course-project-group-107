@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import "../App.css";
+import "./login.css";
 import illinilogo2crop from "./illinilogo2crop.png";
 import axios from "axios"
 
@@ -35,7 +36,7 @@ class Login extends Component {
       };
     render() { 
         return (
-            <div className="App">
+            <div className="login">
                 <img src={illinilogo2crop} className="illinilogo2crop" alt="Illinois" />
                 <form className="form" onSubmit={this.handleSubmit}>
                 <div className="input-group">
