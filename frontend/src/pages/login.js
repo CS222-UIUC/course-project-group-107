@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import "../App.css";
-import illinilogo2crop from "../assets/illinilogo2crop.png";
+import illinilogo2crop from "./illinilogo2crop.png";
+import axios from "axios"
 
 class Login extends Component {
     handleSubmit = e => {
@@ -13,13 +14,16 @@ class Login extends Component {
           alert("Valid email is required");
         } else if (!e.target.password.value) {
           alert("Password is required");
-        } else if (
-          e.target.email.value === "apples@apples.com" &&
-          e.target.password.value === "apples"
-        ) {
-          alert("Successfully logged in");
-          e.target.email.value = "";
-          e.target.password.value = "";
+        } else if (e.target.password.value && e.target.email.value) {
+          const article = { username: e.target.email.value, password:e.target.password.value };
+          console.log(article);
+            axios.post('http://127.0.0.1:8000/accounts/api/user/', article, {
+              headers: {
+                'Content-Type': 'application/json'
+              }
+            })
+              .then(response => console.log(response.data)).catch((error) => console.log( error.response.request._response ) );
+          
         } else {
           alert("Wrong email or password combination");
         }

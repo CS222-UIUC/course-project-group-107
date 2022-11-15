@@ -13,11 +13,11 @@ function App() {
       <Router>
       <Navbar/> 
         <Routes>
-          <Route path='/Home' component={Home} />
-          <Route path='/about' component={About} />
-          <Route path='/Live' component={Live} />
-          <Route path='/login' component={Login} />
-          <Route path='/insight' component={Insight}/>
+          <Route path='/Home' element={<Home/>} />
+          <Route path='/about' element={<About/>} />
+          <Route path='/Live' element={<Live/>} />
+          <Route path='/login' element={<Login/>}/>
+          <Route path='/insight' element={<Insight/>}/>
         </Routes>
       </Router> 
 );

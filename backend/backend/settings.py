@@ -42,7 +42,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crispy_forms',
-    'accounts'
+    'accounts',
+    'rest_framework',
+    'corsheaders'
 ]
 CRISPY_TEMPLATE_PACK =  'bootstrap4'
 
@@ -54,6 +56,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware'
 ]
 
 ROOT_URLCONF = 'backend.urls'
@@ -84,10 +87,11 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'data',
-        
         'USER': 'root',
         'HOST': '127.0.0.1',
         'PASSWORD': 'cs222'
+        #'TIMEOUT': '180'
+        
 
     }
 }
@@ -133,3 +137,7 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CORS_ORIGIN_WHITELIST = [
+     'http://localhost:3000'
+]
