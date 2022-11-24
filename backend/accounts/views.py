@@ -9,12 +9,18 @@ from rest_framework import viewsets
 from rest_framework import permissions
 from .serializers import UserSerializer
 from .models import user
-
+from .logincheck import isvalidpass
+from django.http import HttpResponse
 # Create your views here.
 
-def login(request):
+def loginReq(request):
+    isvalid = False
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        isvalid = isvalidpass(username, password)
+    return HttpResponse(isvalid)
     
-    return render(request, '../frontend/src/pages/login.js')
 
 class LoginView(viewsets.ModelViewSet):
     serializer_class = UserSerializer

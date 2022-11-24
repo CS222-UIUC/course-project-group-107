@@ -15,13 +15,13 @@ def isvalidpass(netid, password):
     print(cursor.rowcount)
     print (s)
     if (cursor.rowcount == 0): #if rowcount is 0 means no username exists
-        return "Invalid Username"   
+        return False   
     print(s[0][1])
     
     if s[0][1] != password:  #chekcs to see if password is correct
-        return "Invalid Password"
+        return False
     else:  #means that everything is ok
-        return "Proceed"
+        return True
 
 def newuser(netid, password):
     connection = mysql.connector.connect(host='127.0.0.1',

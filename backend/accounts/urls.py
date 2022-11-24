@@ -2,7 +2,7 @@
 from django.urls import path, include
 from rest_framework import routers
 from accounts import views
-
+from .views import loginReq
 router = routers.DefaultRouter()
 router.register(r'user',views.LoginView, 'login') #dont know if login is correct
 
@@ -16,7 +16,8 @@ urlpatterns = [
     #path('password-reset/done/', views.PasswordResetDoneView.as_view(), name='password_reset_done'),
     #path('reset/<uidb64>/<token>/', views.PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
     #path('reset/done/', views.PasswordResetCompleteView.as_view(), name='password_reset_complete'),
-    path('api/', include(router.urls))
+    path('api/', include(router.urls)),
+    path('login/', loginReq, name='login')
 ]
 #commit for latest changes 
 
