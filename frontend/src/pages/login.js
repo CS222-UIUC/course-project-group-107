@@ -3,7 +3,7 @@ import "../App.css";
 import "./login.css";
 import illinilogo2crop from "./illinilogo2crop.png";
 import axios from "axios"
-
+//import isvalidpass from "./backend/logincheck.py"
 class Login extends Component {
     handleSubmit = e => {
         e.preventDefault();
@@ -16,6 +16,7 @@ class Login extends Component {
         } else if (!e.target.password.value) {
           alert("Password is required");
         } else if (e.target.password.value && e.target.email.value) {
+          //correctinput = isvalidpass(e.target.email.value, e.target.password.value);
           const article = { username: e.target.email.value, password:e.target.password.value };
           console.log(article);
             axios.post('http://127.0.0.1:8000/accounts/api/user/', article, {
@@ -24,7 +25,10 @@ class Login extends Component {
               }
             })
               .then(response => console.log(response.data)).catch((error) => console.log( error.response.request._response ) );
-          
+            axios.get('http://127.0.0.1:8000/accounts/login/').then((response) => {
+              console.log(response.data)
+            }
+            );
         } else {
           alert("Wrong email or password combination");
         }
