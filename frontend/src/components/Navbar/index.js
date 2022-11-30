@@ -23,8 +23,8 @@ const Navbar = () => {
           <NavLink to='/Live'>
             Live Capacities
           </NavLink>
-          <NavLink to='/Insights'>
-            Insights
+          <NavLink to='/Catalog'>
+            Catalog
           </NavLink>
 
           {/* Second Nav */}
