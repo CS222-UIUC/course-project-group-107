@@ -22,6 +22,9 @@ def loginReq(request):
     return HttpResponse(isvalid)
     
 
+    
+   
+
 class LoginView(viewsets.ModelViewSet):
     serializer_class = UserSerializer
     queryset = user.objects.all()
