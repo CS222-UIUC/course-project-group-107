@@ -3,7 +3,6 @@
 import Navbar from './components/Navbar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/index';
-import About from './pages/about';
 import Live from './pages/Live';
 import Login from './pages/login';
 import Catalog from './pages/catalog';
