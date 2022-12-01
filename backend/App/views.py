@@ -8,7 +8,8 @@ from .models import arcdatacsv
 # def index(request):
 #     return HttpResponse("Hello, world. You're at the App index.")
 
-def index(request):
-    latest_login_list = arcdatacsv.objects.order_by('-access_date')[:5]
-    output = ', '.join([login.net_id for login in latest_login_list])
+def liveCapacity(request):
+    areas = arcdatacsv.objects.all()
+    output =  ', '.join([str(caps.arccap) for caps in areas])
     return HttpResponse(output)
+    
