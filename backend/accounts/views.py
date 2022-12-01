@@ -28,26 +28,3 @@ class LoginView(viewsets.ModelViewSet):
     print(queryset[0].username)
 
 
-
-# def logout(request):
-    
-#     return render(request, 'logout.html')
-
-# def accounts(request):
-#     return render(request, 'base.html')
-
-# def login(request):
-    
-#     return render(request, '../templates/registration/login.html')
-
-# def login(request):
-    
-#     return render(request, '../templates/registration/login.html')
-
-# def login(request):
-    
-#     return render(request, '../templates/registration/login.html')
-
-# def login(request):
-    
-#     return render(request, '../templates/registration/login.html')
