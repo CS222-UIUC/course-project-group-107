@@ -20,16 +20,16 @@ class Login extends Component {
           //correctinput = isvalidpass(e.target.email.value, e.target.password.value);
           const article = { username: e.target.email.value, password:e.target.password.value };
           console.log(article);
-            axios.post('http://127.0.0.1:8000/accounts/api/user/', article, {
+            axios.post('http://127.0.0.1:8000/accounts/api/user/login/', article, {
               headers: {
                 'Content-Type': 'application/json'
               }
             })
               .then(response => console.log(response.data)).catch((error) => console.log( error.response.request._response ) );
-            axios.get('http://127.0.0.1:8000/accounts/login/').then((response) => {
-              console.log(response.data)
-            }
-            );
+            //axios.get('http://127.0.0.1:8000/accounts/login/').then((response) => {
+              //console.log(response.data)
+            //}
+            //);
         } else {
           alert("Wrong email or password combination");
         }

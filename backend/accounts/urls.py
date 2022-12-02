@@ -3,6 +3,8 @@ from django.urls import path, include
 from rest_framework import routers
 from accounts import views
 from .views import loginReq
+from django.views.decorators.csrf import csrf_exempt
+
 # from .views import liveCapacity
 
 router = routers.DefaultRouter()
@@ -18,9 +20,12 @@ urlpatterns = [
     #path('password-reset/done/', views.PasswordResetDoneView.as_view(), name='password_reset_done'),
     #path('reset/<uidb64>/<token>/', views.PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
     #path('reset/done/', views.PasswordResetCompleteView.as_view(), name='password_reset_complete'),
-    path('api/', include(router.urls)),
-    path('login/', loginReq, name='login'),
+    path('api/user/', loginReq),
+    path('api/user/login/', csrf_exempt(loginReq), name='login')
 ]
+
+
+
 #commit for latest changes 
 
 
