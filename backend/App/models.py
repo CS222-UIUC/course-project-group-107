@@ -23,7 +23,6 @@ from django.db import models
 
 
 class arcdatacsv(models.Model):
-    netid = models.CharField(max_length=8)
-    date = models.DateTimeField('date accessed')
-    arccap = models.IntegerField(default = 0)
+    area_name = models.CharField(max_length=100, default='NONE')
+    capacity = models.IntegerField(default = 0)
 
