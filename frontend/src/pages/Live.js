@@ -5,6 +5,9 @@ import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 
+import Areas from './Areas';
+
+
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#FF5F05',
   ...theme.typography.body2,
@@ -15,11 +18,18 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 export default function Live() {
+
+  
+
+ 
+  
   return (
     <Box sx={{ width: '100%' }}>
       <Grid container rowSpacing={5} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
         <Grid item xs={4}>
-          <Item>SWIMMING POOL: 38 people
+          
+
+          <Item>SWIMMING POOL: areas[SWIMMING POOL] people           
           </Item>
         </Grid>
         <Grid item xs={4}>
