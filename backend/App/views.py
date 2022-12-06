@@ -31,8 +31,9 @@ def getAreas(request):
         
     return HttpResponse(capacity)
 
-@csrf_exempt
+
 class DataView(viewsets.ModelViewSet):
     serializer_class = arcdatacsvSerializer
     queryset = arcdatacsv.objects.all()
     print(queryset[0].capacity)
+    
