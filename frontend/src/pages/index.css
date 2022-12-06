@@ -1,0 +1,8 @@
+.bg-container {
+    background-image: url("https://campusrec.illinois.edu/wp-content/uploads/2019/03/ARC_19_ACP_Exterior-01.jpg");
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position:center center;
+    
+    height: 100vh;
+  }
