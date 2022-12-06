@@ -5,7 +5,8 @@ import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 
-import Areas from './Areas';
+import axios from 'axios'
+import { useState, useEffect } from 'react'
 
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -15,53 +16,117 @@ const Item = styled(Paper)(({ theme }) => ({
   textAlign: 'center',
   fontSize: 24,
   color: theme.palette.text.secondary,
+  
 }));
 
+
 export default function Live() {
+  
+  // const article = { area_name: "MAIN GYM"};
+  //         console.log(article);
+  //           axios.get('http://127.0.0.1:8000/App/api/arcdatacsv/Live/', article, {
+  //             headers: {
+  //               'Content-Type': 'application/json'
+  //             }
+  //           })
+  //             .then(response => console.log(response.data)).catch((error) => console.log( error.response.request._response ) );
 
+  const [Areas, setAreas] = useState([])
+  const [error, setError] = useState(null);
+  
+  
+  useEffect(() => {
+  
+    axios.get('http://127.0.0.1:8000/App/api/arcdatacsv/').then((response) => {
+       setAreas(response.data);
+    }).catch(setError());
   
 
- 
+ }, []);
   
+
   return (
+    
     <Box sx={{ width: '100%' }}>
       <Grid container rowSpacing={5} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
         <Grid item xs={4}>
           
+        
+          
+        <Item>
+          
+          <div>
+          
+            { Areas[0].area_name } : { Areas[0].capacity }
 
-          <Item>SWIMMING POOL: areas[SWIMMING POOL] people           
+          </div>
+          
+          
+        </Item>
+      
+        </Grid>
+        <Grid item xs={4}>
+          <Item>
+          <div>
+          
+          { Areas[1].area_name } : { Areas[1].capacity }
+          </div>
           </Item>
         </Grid>
         <Grid item xs={4}>
-          <Item>MAIN GYM: 140 people
+          <Item>
+          <div>
+          
+          { Areas[2].area_name } : { Areas[2].capacity }
+          </div>
           </Item>
         </Grid>
         <Grid item xs={4}>
-          <Item>BASKETBALL COURTS: 78 people
+          <Item>
+          <div>
+          
+          { Areas[3].area_name } : { Areas[3].capacity }
+          </div>
           </Item>
         </Grid>
         <Grid item xs={4}>
-          <Item>ROCK CLIMBING: 16 people
+          <Item>
+          <div>
+          
+          { Areas[4].area_name } : { Areas[4].capacity }
+          </div>
           </Item>
         </Grid>
         <Grid item xs={4}>
-          <Item>TRACK: 21 people
+          <Item>
+          <div>
+          
+          { Areas[5].area_name } : { Areas[5].capacity }
+          </div>
           </Item>
         </Grid>
         <Grid item xs={4}>
-          <Item>KITCHEN: 5 people
+          <Item>
+          <div>
+          
+          { Areas[6].area_name } : { Areas[6].capacity }
+          </div>
           </Item>
         </Grid>
         <Grid item xs={4}>
-          <Item>LOWER LEVEL GYM: 42 people
+          <Item>
+          <div>
+          
+          { Areas[7].area_name } : { Areas[7].capacity }
+          </div>
           </Item>
         </Grid>
         <Grid item xs={4}>
-          <Item>UPPER LEVEL GYM: 26 people
-          </Item>
-        </Grid>
-        <Grid item xs={4}>
-          <Item>SAUNA: 12 people
+          <Item>
+          <div>
+          
+          { Areas[8].area_name } : { Areas[8].capacity }
+          </div>
           </Item>
         </Grid>
       </Grid>

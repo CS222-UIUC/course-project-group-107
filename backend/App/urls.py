@@ -6,17 +6,21 @@ from App import views
 from django.views.decorators.csrf import csrf_exempt
 from .views import liveCapacity
 from .views import getAreas
+from .views import DataView
 
 
 
 router = routers.DefaultRouter()
-router.register(r'arcdatacsv',views.DataView, 'Live') #dont know if login is correct
+router.register(r'arcdatacsv',views.DataView, 'api') #dont know if login is correct
 
 
 urlpatterns = [
+    path('api/', include(router.urls)),
     path('Live/', liveCapacity, name='Live'),
+
     
-    path('api/arcdatacsv/Live/', csrf_exempt(getAreas), name='Live')
+    path('api/arcdatacsv/Live/', csrf_exempt(getAreas), name='Live'),
+    
 ]
    
 
