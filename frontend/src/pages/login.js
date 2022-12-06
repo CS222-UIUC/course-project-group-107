@@ -26,10 +26,17 @@ class Login extends Component {
               }
             })
               .then(response => console.log(response.data)).catch((error) => console.log( error.response.request._response ) );
+<<<<<<< HEAD
+            //axios.get('http://127.0.0.1:8000/accounts/login/').then((response) => {
+              //console.log(response.data)
+            //}
+            //);
+=======
             // axios.get('http://127.0.0.1:8000/accounts/login/').then((response) => {
             //   console.log(response.data)
             // }
             // );
+>>>>>>> 43945b53871ce8e2b2ff51616cda463660861558
         } else {
           alert("Wrong email or password combination");
         }

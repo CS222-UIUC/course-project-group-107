@@ -17,6 +17,7 @@ import json
 
 def loginReq(request):
     isvalid = False
+    print(request.method)
     if request.method == 'POST':
         body_unicode = request.body.decode('utf-8')
         body = json.loads(body_unicode)
@@ -34,6 +35,6 @@ def loginReq(request):
 class LoginView(viewsets.ModelViewSet):
     serializer_class = UserSerializer
     queryset = user.objects.all()
-    print(queryset[0].username)
+    #print(queryset[0].username)
 
 
