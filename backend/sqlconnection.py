@@ -56,8 +56,8 @@ def csv_to_db():
         )
     ''')  #creates the table to insert into 
     for row in df.itertuples(): #loops through each row of the csv file and inserts it into 
-        toinsert = '''INSERT INTO arcdatacsv (area_name, capacity) VALUES ('{}', '{}'
+        toinsert = '''INSERT INTO app_arcdatacsv (area_name, capacity) VALUES ('{}', '{}'
         , '{}')'''.format(row.area_name, row.capacity)
         cursor.execute(toinsert)     #executes sql statement
     connection.commit()
-csv_to_db()
+#csv_to_db()

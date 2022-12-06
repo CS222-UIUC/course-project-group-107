@@ -32,6 +32,7 @@ def newuser(netid, password):
     find_user_stmt = "SELECT * FROM login WHERE NetID = '{}'".format(netid)
     cursor.execute(find_user_stmt)
     cursor.fetchall()
+    print(cursor.rowcount)
     if(cursor.rowcount != 0):
         return False
     insert_stmt = "INSERT INTO login (NetID, Password) VALUES ('{}', '{}')".format(netid, password)
