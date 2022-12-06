@@ -39,7 +39,7 @@ def mysql_connector():
 
 def csv_to_db():
     #reads data from csv files
-    data = pd.read_csv("testdata.csv") #pulling data from dummy, can easily expand with more data
+    data = pd.read_csv("updated_testdata.csv") #pulling data from dummy, can easily expand with more data
     df = pd.DataFrame(data)
     print(df)
     #makes the connection to sql db
@@ -51,14 +51,13 @@ def csv_to_db():
     
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS arcdatacsv (
-            netid nvarchar(50),
-            date nvarchar(50),        
-            arccap int
+            area_name nvarchar(100),      
+            capacity int
         )
     ''')  #creates the table to insert into 
     for row in df.itertuples(): #loops through each row of the csv file and inserts it into 
-        toinsert = '''INSERT INTO arcdatacsv (netid, date, arccap) VALUES ('{}', '{}'
-        , '{}')'''.format(row.netid, row.date, row.arccap)
+        toinsert = '''INSERT INTO arcdatacsv (area_name, capacity) VALUES ('{}', '{}'
+        , '{}')'''.format(row.area_name, row.capacity)
         cursor.execute(toinsert)     #executes sql statement
     connection.commit()
 csv_to_db()

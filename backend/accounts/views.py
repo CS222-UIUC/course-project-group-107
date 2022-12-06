@@ -25,12 +25,12 @@ def loginReq(request):
         password = body['password']
         print(username)
         print(password)
-        #username = request.body[0]
-        #password = request.body[1]
         isvalid = isvalidpass(username, password)
     return HttpResponse(isvalid)
     
 
+    
+   
 @csrf_exempt
 class LoginView(viewsets.ModelViewSet):
     serializer_class = UserSerializer

@@ -4,7 +4,10 @@ from rest_framework import routers
 from accounts import views
 from .views import loginReq
 from django.views.decorators.csrf import csrf_exempt
+<<<<<<< HEAD
 
+=======
+>>>>>>> 43945b53871ce8e2b2ff51616cda463660861558
 # from .views import liveCapacity
 
 router = routers.DefaultRouter()
@@ -12,6 +15,7 @@ router.register(r'user',views.LoginView, 'login') #dont know if login is correct
 
 
 urlpatterns = [
+<<<<<<< HEAD
     #path('login/', views.LoginView.as_view(), name='login'),
     #path('logout/', views.LogoutView.as_view(), name='logout'),
     #path('password-change/', views.PasswordChangeView.as_view(), name='password_change'),
@@ -20,6 +24,9 @@ urlpatterns = [
     #path('password-reset/done/', views.PasswordResetDoneView.as_view(), name='password_reset_done'),
     #path('reset/<uidb64>/<token>/', views.PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
     #path('reset/done/', views.PasswordResetCompleteView.as_view(), name='password_reset_complete'),
+=======
+
+>>>>>>> 43945b53871ce8e2b2ff51616cda463660861558
     path('api/user/', loginReq),
     path('api/user/login/', csrf_exempt(loginReq), name='login')
 ]
