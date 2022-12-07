@@ -56,8 +56,8 @@ export default function Live() {
         <Item>
           
           <div>
-          
-            { Areas[0].area_name } : { Areas[0].capacity }
+            {/* if (Areas[0] != null && Areas.length != 0) */}
+            { Areas[0]?.area_name } : { Areas[0]?.capacity }
 
           </div>
           
@@ -69,7 +69,7 @@ export default function Live() {
           <Item>
           <div>
           
-          { Areas[1].area_name } : { Areas[1].capacity }
+          { Areas[1]?.area_name } : { Areas[1]?.capacity }
           </div>
           </Item>
         </Grid>
@@ -77,7 +77,7 @@ export default function Live() {
           <Item>
           <div>
           
-          { Areas[2].area_name } : { Areas[2].capacity }
+          { Areas[2]?.area_name } : { Areas[2]?.capacity }
           </div>
           </Item>
         </Grid>
@@ -85,7 +85,7 @@ export default function Live() {
           <Item>
           <div>
           
-          { Areas[3].area_name } : { Areas[3].capacity }
+          { Areas[3]?.area_name } : { Areas[3]?.capacity }
           </div>
           </Item>
         </Grid>
@@ -93,7 +93,7 @@ export default function Live() {
           <Item>
           <div>
           
-          { Areas[4].area_name } : { Areas[4].capacity }
+          { Areas[4]?.area_name } : { Areas[4]?.capacity }
           </div>
           </Item>
         </Grid>
@@ -101,7 +101,7 @@ export default function Live() {
           <Item>
           <div>
           
-          { Areas[5].area_name } : { Areas[5].capacity }
+          { Areas[5]?.area_name } : { Areas[5]?.capacity }
           </div>
           </Item>
         </Grid>
@@ -109,7 +109,7 @@ export default function Live() {
           <Item>
           <div>
           
-          { Areas[6].area_name } : { Areas[6].capacity }
+          { Areas[6]?.area_name } : { Areas[6]?.capacity }
           </div>
           </Item>
         </Grid>
@@ -117,7 +117,7 @@ export default function Live() {
           <Item>
           <div>
           
-          { Areas[7].area_name } : { Areas[7].capacity }
+          { Areas[7]?.area_name } : { Areas[7]?.capacity }
           </div>
           </Item>
         </Grid>
@@ -125,7 +125,7 @@ export default function Live() {
           <Item>
           <div>
           
-          { Areas[8].area_name } : { Areas[8].capacity }
+          { Areas[8]?.area_name } : { Areas[8]?.capacity }
           </div>
           </Item>
         </Grid>
