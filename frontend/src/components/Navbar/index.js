@@ -9,7 +9,7 @@ import {
 } from './NavbarElements';
 import Login from '../../pages/login';
 class Navbar extends Login {
-  
+    
     render() {
       if (this.state.isLoggedIn) {
         return (
