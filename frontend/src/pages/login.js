@@ -1,11 +1,20 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
+
 import "../App.css";
 import "./login.css";
 import illinilogo2crop from "./illinilogo2crop.png";
 import axios from "axios"
+
 //import isvalidpass from "./backend/logincheck.py"
+
 class Login extends Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        isLoggedIn: true
+      }
+    }
     handleSubmit = e => {
         e.preventDefault();
         console.log(e.target.email.value);
@@ -31,7 +40,7 @@ class Login extends Component {
         }
       };
     
-      handleClick = e => {
+      handleClick = e => { 
         e.preventDefault();
         alert("Goes to registration page");
       };

@@ -7,35 +7,67 @@ import {
   NavBtn,
   NavBtnLink,
 } from './NavbarElements';
+import Login from '../../pages/login';
+class Navbar extends Login {
   
-const Navbar = () => {
-  return (
-    <>
-      <Nav>
-        <Bars />
-        <NavMenu>
-          <NavLink to='/Home'>
-            Home  
-          {/* </NavLink>  
-          <NavLink to='/about'>
-            About */}
-          </NavLink>
-          <NavLink to='/Live'>
-            Live Capacities
-          </NavLink>
-          <NavLink to='/Catalog'>
-            Catalog
-          </NavLink>
+    render() {
+      if (this.state.isLoggedIn) {
+        return (
+          <>
+            <Nav>
 
-          {/* Second Nav */}
-          {/* <NavBtnLink to='/sign-in'>Sign In</NavBtnLink> */}
-        </NavMenu>
-        <NavBtn>
-          <NavBtnLink to='/login'>Sign In</NavBtnLink>
-        </NavBtn>
-      </Nav>
-    </>
-  );
-};
+              <Bars />
+
+              <NavMenu>
+
+                <NavLink to='/Home'>
+                  Home  
+                </NavLink>
+      
+                <NavLink to='/Live'>
+                  Live Capacities
+                </NavLink>
+
+                <NavLink to='/Catalog'>
+                  Catalog
+                </NavLink>
+      
+              </NavMenu>
+
+              <NavBtn>
+                <NavBtnLink to='/login'>Sign In</NavBtnLink>
+              </NavBtn>
+
+            </Nav>
+          </>
+        );
+    } else {
+      return (
+        <>
+          <Nav>
+            <Bars />
+            <NavMenu>
+
+              <NavLink to='/Home'>
+                Home  
+              </NavLink> 
+            </NavMenu>
+
+            <NavBtn>
+              <NavBtnLink to='/login'>Sign In</NavBtnLink>
+            </NavBtn>
+
+          </Nav>
+        </>
+      );
+    }
+  }
+}
+
+
+
+    
+
+
   
 export default Navbar;
