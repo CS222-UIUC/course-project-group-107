@@ -20,7 +20,7 @@ class Navbar extends Login {
 
               <NavMenu>
 
-                <NavLink to='/Home'>
+                <NavLink to='/'>
                   Home  
                 </NavLink>
       
