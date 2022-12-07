@@ -23,7 +23,7 @@ class Navbar extends Login {
                 <NavLink to='/'>
                   Home  
                 </NavLink>
-      
+       
                 <NavLink to='/Live'>
                   Live Capacities
                 </NavLink>
@@ -48,7 +48,7 @@ class Navbar extends Login {
             <Bars />
             <NavMenu>
 
-              <NavLink to='/Home'>
+              <NavLink to='/'>
                 Home  
               </NavLink> 
             </NavMenu>

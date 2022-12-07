@@ -4,7 +4,7 @@ import "./login.css";
 import "./register.css"
 import illinilogo2crop from "./illinilogo2crop.png";
 import axios from "axios"
-
+import { redirect } from 'react-router-dom';
 class Register extends Component {
     handleSubmit = e => {
         e.preventDefault();
@@ -25,7 +25,7 @@ class Register extends Component {
               }
             })
               .then(response => console.log(response.data)).catch((error) => console.log( error.response.request._response ) );
-          
+            <redirect to="/login" />
         }
       };
     render() { 
