@@ -13,7 +13,7 @@ Our web application was made with the intent to create a platform for the ARC an
 Technical Architecture/Roles:
 Backend- For the backend, our main language used was Python, using the Django framework to enable our API. The backend uses the Django Rest framework for the API, as well as a SQL Database to hold our data for capacities and users. Our backend engineers for this project were Keshav Trikha and Diego Taveras. 
 
-Frontend- The front end uses the React framework with javascript as its primary language. The frontend uses Axios POST requests to react with the Django Rest API. The frontend engineers were Saketh Boyapally and Sid Wanjara.
+Frontend- The front end uses the React framework with javascript as its primary language. The frontend uses Axios POST requests to interact with the Django Rest API. The frontend engineers were Saketh Boyapally and Sid Wanjara.
 
 # How to Install / Work:
 

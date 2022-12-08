@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
+import { Link, redirect} from "react-router-dom";
 
 import "../App.css";
 import "./login.css";
@@ -12,7 +12,7 @@ class Login extends Component {
     constructor(props) {
       super(props);
       this.state = {
-        isLoggedIn: false
+        isLoggedIn: true
       }
     }
     handleSubmit = e => {
@@ -29,17 +29,28 @@ class Login extends Component {
           //correctinput = isvalidpass(e.target.email.value, e.target.password.value);
           const article = { username: e.target.email.value, password:e.target.password.value };
           console.log(article);
+            
             axios.post('http://127.0.0.1:8000/accounts/api/user/login/', article, {
               headers: {
                 'Content-Type': 'application/json'
               }
             })
-              .then(response => console.log(response.data)).catch((error) => console.log( error.response.request._response ) );
+              .then(function (response) {
+                const data = response.data;
+                console.log(response.data);
+                if (data === "True") {
+                  this.setState(true);
+                  <redirect to="/catalog" />
+                } else {
+                  this.setState(false);
+                  <redirect to="/register" />
+                }
+              }).catch((error) => console.log( error.response.request._response ) );
         } else {
           alert("Wrong email or password combination");
         }
       };
-    
+    //response => console.log(response.data)
       handleClick = e => { 
         e.preventDefault();
         alert("Goes to registration page");
