@@ -6,7 +6,7 @@ from App import views
 from django.views.decorators.csrf import csrf_exempt
 from .views import liveCapacity
 from .views import getAreas
-from .views import DataView
+# from .views import DataView
 
 
 
@@ -18,8 +18,9 @@ urlpatterns = [
     path('api/', include(router.urls)),
     path('Live/', liveCapacity, name='Live'),
 
+    path('', liveCapacity),
     
-    path('api/arcdatacsv/Live/', csrf_exempt(getAreas), name='Live'),
+    path('api/arcdatacsv/Live/', getAreas, name='Live'),
     
 ]
    

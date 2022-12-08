@@ -35,5 +35,5 @@ def getAreas(request):
 class DataView(viewsets.ModelViewSet):
     serializer_class = arcdatacsvSerializer
     queryset = arcdatacsv.objects.all()
-    print(queryset[0].capacity)
+    # print(queryset[0].capacity)
     
