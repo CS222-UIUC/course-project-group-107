@@ -19,7 +19,7 @@ class Register extends Component {
         } else if (e.target.password.value && e.target.email.value) {
           const article = { username: e.target.email.value, password: e.target.password.value };
           console.log(article);
-            axios.post('http://127.0.0.1:8000/accounts/api/user/', article, {
+            axios.post('http://127.0.0.1:8000/accounts/api/user/newuser/', article, {
               headers: {
                 'Content-Type': 'application/json'
               }
