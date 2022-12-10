@@ -25,7 +25,7 @@ class Register extends Component {
               }
             })
               .then(response => console.log(response.data)).catch((error) => console.log( error.response.request._response ) );
-            <redirect to="/login" />
+              window.location = "/login"
         }
       };
     render() { 

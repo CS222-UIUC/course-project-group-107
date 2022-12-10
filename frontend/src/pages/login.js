@@ -1,10 +1,11 @@
-import React, { Component } from 'react';
-import { Link, redirect} from "react-router-dom";
+import React, {useState, Component, useRoute} from 'react';
+import { Link} from "react-router-dom";
 
 import "../App.css";
 import "./login.css";
 import illinilogo2crop from "./illinilogo2crop.png";
 import axios from "axios"
+
 
 //import isvalidpass from "./backend/logincheck.py"
 
@@ -15,7 +16,13 @@ class Login extends Component {
         isLoggedIn: false
       }
     }
+    
     handleSubmit = e => {
+      const article = { username: e.target.email.value, password:e.target.password.value };
+
+        <redirect to="/register" />
+        console.log("hi");
+        
         e.preventDefault();
         console.log(e.target.email.value);
     
@@ -27,25 +34,28 @@ class Login extends Component {
           alert("Password is required");
         } else if (e.target.password.value && e.target.email.value) {
           //correctinput = isvalidpass(e.target.email.value, e.target.password.value);
-          const article = { username: e.target.email.value, password:e.target.password.value };
+
           console.log(article);
-            
-            axios.post('http://127.0.0.1:8000/accounts/api/user/login/', article, {
-              headers: {
-                'Content-Type': 'application/json'
-              }
-            })
-              .then(function (response) {
-                const data = response.data;
+          axios.post('http://127.0.0.1:8000/accounts/api/user/login/', article, {
+          headers: {
+            'Content-Type': 'application/json'
+          }
+          })
+            .then(function (response) {
+              const data = response.data;
+              console.log(response.data);
+              if (data === "True") {
+                window.location = "/Catalog"
                 console.log(response.data);
-                if (data === "True") {
-                  this.setState(true);
-                  <redirect to="/catalog" />
-                } else {
-                  this.setState(false);
-                  <redirect to="/register" />
-                }
-              }).catch((error) => console.log( error.response.request._response ) );
+                
+                
+              } else {
+                this?.setState(false);
+                window.location = "/register"
+              }
+            }).catch((error) => console.log( error.response.request._response ) );
+      
+            
         } else {
           alert("Wrong email or password combination");
         }
@@ -74,7 +84,7 @@ class Login extends Component {
                 <button className="secondary">
                 CREATE A NEW ACCOUNT
                 </button>
-                </Link>
+                </Link> 
             </div>
         )
         
